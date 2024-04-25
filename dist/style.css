@@ -1,0 +1,87 @@
+/* ColorPicker */
+body {
+  color: #1e1e1e;
+  font-size: 1rem;
+}
+
+.header {
+  box-shadow: 0px 6px 18px -10px rgba(66, 68, 90, 1);
+}
+
+.color-div {
+  color: rgba(255, 255, 255, 0.5);
+  flex-basis: 100%;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.2rem;
+  transition: flex-basis 0.2s, color 0.2s, font-size 0.2s;
+}
+
+.color-div:hover {
+  flex-basis: 140%;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.inputs {
+  height: 40px;
+}
+
+select {
+  /* // A reset of styles, including removing the default dropdown arrow */
+  appearance: none;
+  /* Additional resets for further consistency */
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+.select {
+  width: 300px;
+  border: #6d6d6d solid 2px;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  height: 100%;
+}
+
+.btn {
+  border: #6d6d6d solid 2px;
+  padding: 0 1em;
+  border-radius: 0.5em;
+  height: 100%;
+}
+
+#color-input {
+  height: 100%;
+  border: #6d6d6d solid 2px;
+  border-radius: 0.5em;
+}
+
+.color1 {
+  background-color: #6d6d6d;
+}
+.color2 {
+  background-color: #6d6d6d;
+}
+.color3 {
+  background-color: #6d6d6d;
+}
+.color4 {
+  background-color: #6d6d6d;
+}
+.color5 {
+  background-color: #6d6d6d;
+}
+.color6 {
+  background-color: #6d6d6d;
+}
