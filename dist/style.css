@@ -85,3 +85,7 @@ select {
 .color6 {
   background-color: #6d6d6d;
 }
+
+.color-inp {
+  opacity: 50%;
+}

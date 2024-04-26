@@ -3,18 +3,35 @@ console.log("Color Picker")
 
 const colorsM = document.getElementById("colors-m")
 const selectScheme = document.getElementById("color-scheme-picker")
+const colorInput = document.getElementById("color-input")
+colorInput.classList.toggle("color-inp")
+const switchAuto = document.getElementById("checkbox")
+colorInput.value = "#F40A6B"
 let colorArr = []
 
 document.addEventListener("click", function (e) {
   if (e.target.id === "get-colors") {
-    handleGetColorsClick(selectScheme.value)
+    if (colorInput.disabled === false) {
+      handleGetColorsClick(selectScheme.value, getHex())
+    } else {
+      handleGetColorsClick(selectScheme.value, getRandomHex())
+    }
   } else if (e.target.dataset.share) {
-    handleCopyClic(e.target.dataset.share)
+    handleCopyClick(e.target.dataset.share)
+  } else if (e.target.id === "switch") {
+    if (e.target.checked === true) {
+      colorInput.disabled = true
+      colorInput.classList.toggle("color-inp")
+    } else {
+      colorInput.disabled = false
+      colorInput.classList.toggle("color-inp")
+    }
+    console.log(e.target.checked)
   }
 })
 
-const handleGetColorsClick = (value = "triad") => {
-  fetch(`https://www.thecolorapi.com/scheme?hex=${getRandomHex()}&mode=${value}`)
+const handleGetColorsClick = (value = "monochrome", valueNd) => {
+  fetch(`https://www.thecolorapi.com/scheme?hex=${valueNd}&mode=${value}`)
     .then(response => response.json())
     .then(data => {
       colorArr.push(data)
@@ -22,12 +39,19 @@ const handleGetColorsClick = (value = "triad") => {
     })
 }
 
-handleGetColorsClick()
+handleGetColorsClick() //render or site start
 
 const test = () => {
   if (colorArr.length == 1) {
     render()
   }
+}
+
+function getHex() {
+  let color = colorInput.value
+  let colorNew = color.slice(1)
+  console.log(colorNew)
+  return colorNew
 }
 
 function getRandomHex() {
@@ -60,7 +84,7 @@ const render = () => {
   colorArr = []
 }
 
-function handleCopyClic(item) {
+function handleCopyClick(item) {
   const content = item
   navigator.clipboard.writeText(content)
 }
