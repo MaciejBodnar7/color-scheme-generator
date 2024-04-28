@@ -27,7 +27,7 @@ firegem.io | Project
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/3-color-scheme-generator.git
+git clone https://github.com/MaciejBodnar7/color-scheme-generator.git
 ```
 
 2. Navigate to the project directory:
